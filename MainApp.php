@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 <?php 
 include "Header.php";
 include "navigationChose.php";
@@ -18,6 +12,31 @@ include "Function.php";
 
 
 <script>
+
+
+$('#recipeCarousel').carousel({
+  interval :2000
+})
+
+$('.carousel .carousel-item').each(function(){
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<2;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+    }
+});
+
+
+
 
 
 function AddToCart()
@@ -55,6 +74,8 @@ function AddToCart()
 
     </div>
 
+    <!-- // thêm carousel mới nhất -->
+
     <div class = "background-second-main">
 
         <div class = "background-second-main-left">
@@ -62,6 +83,8 @@ function AddToCart()
             <h3>GIÀY PHARRELL WILLIAMS HU NMD</h3>
             <a src = "InformationDetail.php"><button style = "width :20%; margin-left : 10%; " class = "btn-ID-add" >Detail</button></a>
         </div>
+
+
 
 
         <div class = "background-second-main-right">
@@ -74,21 +97,27 @@ function AddToCart()
     </div>
     
 
+    <!-- // thêm carousel mới Bán Chạy -->
+
     
         <?php 
 
             LoadItemMain();
 
+            // Temp();
+
         ?>
 
 
-    
-    
-
     <div class = "background-third-main">
-        
+
+
 
     </div>
+
+
+    <!-- // thêm carousel mới Bán Chạy -->
+
 
 
     <div class = "background-fourth-main">

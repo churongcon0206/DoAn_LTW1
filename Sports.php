@@ -1,6 +1,7 @@
 <?php 
 include "Header.php";
 include "navigationChose.php";
+include "Function.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,16 +15,27 @@ include "navigationChose.php";
 <div style = "margin : 0px; margin-right: 0px; padding : 0px;">
 
 
-    <form style = "margin-top : 50px; margin-left : 40%;" class="example" action="action_page.php">
-        <input style = "width : 250px; color : black;" type="text" placeholder="Search..." name="search">
-        <button type="submit" style = "background-color : black; width : 50px;" ><i class="fa fa-search"></i></button>
+<form style = "margin-top : 50px; margin-left : 40%;" class="example" action="Sports.php" method = "POST">
+        <input  name="input-search-sports" style = "width : 250px; color : black;" type="text" placeholder="Search...">
+        <button name="btn-search-sports"  type="submit"style = "background-color : black; width : 50px;" ><i class="fa fa-search"></i></button>
     </form>
 
     <div class="container-right">
 
 
     <?php 
-            LoadItem('Sport');
+        if(isset($_POST['btn-search-sports']))
+        {
+            $NameSearch = $_POST['input-search-sports'];
+            $gender = "Sports";
+            SearchItem($NameSearch, $gender);
+        }
+        else
+        {
+            LoadItem("Sports");
+
+        }
+
     ?>
 
     </div>

@@ -13,16 +13,29 @@ include "Function.php";
 <div style = "margin : 0px; margin-right: 0px; padding : 0px;">
 
 
-    <form style = "margin-top : 50px; margin-left : 40%;" class="example" action="action_page.php">
-        <input style = "width : 250px; color : black;" type="text" placeholder="Search..." name="search">
-        <button type="submit" style = "background-color : black; width : 50px;" ><i class="fa fa-search"></i></button>
+    <form style = "margin-top : 50px; margin-left : 40%;" class="example" action="Women.php" method = "POST">
+        <input  name="input-search-women" style = "width : 250px; color : black;" type="text" placeholder="Search...">
+        <button name="btn-search-women"  type="submit"style = "background-color : black; width : 50px;" ><i class="fa fa-search"></i></button>
     </form>
 
     <div class="container-right">
 
 
         <?php 
-            LoadImgMain('Women');
+
+
+            if(isset($_POST['btn-search-women']))
+            {
+                $NameSearch = $_POST['input-search-women'];
+                $gender = "Women";
+                SearchItem($NameSearch, $gender);
+            }
+            else
+            {
+                LoadItem("Women");
+
+            }
+
         ?>
 
     </div>
