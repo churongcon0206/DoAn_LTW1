@@ -43,7 +43,7 @@
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                                <input type="submit" name="login" id="login" class="form-submit" value="Log in" />
                             </div>
                         </form>
 
@@ -60,3 +60,39 @@
 </body>
 
 </html>
+<?php 
+if(isset($_POST['login'])){
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $select_customer = "select * from customers where email='$email' AND password='$password'";
+
+    $run_customer = mysqli_query($con,$select_customer);
+
+    $get_ip = getRealUserIp();
+
+    $check_customer = mysqli_num_rows($run_customer);
+
+    $select_cart = "select *from cart ip_add='$get_ip'";
+
+    $run_cart = mysqli_query($con,$select_cart);
+
+    $check_cart = mysqli_num_rows($run_cart);
+
+    if($check_customer==0){
+        echo "<script> alert('Your email or password is wrong')</script>";
+        exit();
+    }
+    if($check_customer==1 AND $check_cart==0){
+        $_SESSION['email']=$email;
+        echo "<script> alert('You are Logged in')</script>";
+        echo "<script>window.open('You are Logged in')</script>";// chưa xong phần này....
+    }else{
+        $_SESSION['email']=$email;
+        echo "<script> alert('You are Logged in')</script>";
+        echo "<script>window.open('checkout.php','_self')</script>";// chưa xong phần này....
+    }
+}
+
+?>
