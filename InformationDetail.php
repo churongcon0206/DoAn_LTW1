@@ -21,7 +21,8 @@ include "Function.php";
         $stmt1->execute(array($GLOBALS['ID'], $comment, $date));
     }
 
-    // var_dump($ID);
+    var_dump($ID);
+    
     $db = new PDO('mysql:host=localhost;dbname=doan_ltw1;charset=utf8', 'root', 'admin');
     $stmt = $db->prepare("SELECT * FROM Item where id = ?");
     $stmt->execute(array($ID));

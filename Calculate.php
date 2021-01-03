@@ -46,15 +46,6 @@ if(isset($_POST['subtotal']))
 
 
 
-// var_dump($sub + $tax + $shipping + $total);
-
-// $db = new PDO('mysql:host=localhost;dbname=doan_ltw1;charset=utf8', 'root', 'admin');     
-
-// $stmt = $db->prepare("INSERT INTO bill (id, IDBill, IDCustomer, subTotal, tax, shipping, grandTotal) value (1 , '1', '1', ?, ?, ?, ?);" );
-// $stmt->execute(array($sub, $tax, $shipping, $total));
-
-
-
 
 ?>
 

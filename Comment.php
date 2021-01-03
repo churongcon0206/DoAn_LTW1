@@ -20,7 +20,8 @@
                     
                     $db = new PDO('mysql:host=localhost;dbname=doan_ltw1;charset=utf8', 'root', 'admin');     
   
-                    $stmt = $db->query("SELECT * FROM comments;");
+                    $stmt = $db->prepare("SELECT * FROM comments where IDItem = ?;");
+                    $stmt->execute(array($GLOBALS['ID']));
                     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     echo '

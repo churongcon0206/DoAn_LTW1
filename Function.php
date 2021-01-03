@@ -1,8 +1,61 @@
 <link rel = "stylesheet" href = "CSS/cart.css">
 
-<?php
-//  $db = new PDO('mysql:host=localhost;dbname=btcn;charset=utf8', 'root', 'admin');
 
+<!-- 
+echo '
+      
+      <div class="owl-carousel owl-theme">
+          <div class="item"><img src="./SRC-Img/background21.jpg" alt="">
+          <div class="btnCarousel"> 
+          <button class="btn-ID-add">detail</button> 
+          <button class="btn-ID-add">add to card</button>
+          </div>
+         
+      </div>
+      '; -->
+
+
+
+
+<?php
+
+
+function carousel($classify)
+{
+
+    
+    AddToBag();
+
+
+    $db = new PDO('mysql:host=localhost;dbname=doan_ltw1;charset=utf8', 'root', 'admin');
+    $stmt = $db->prepare("SELECT * FROM top where classify = ?");
+    $stmt->execute(array( $classify));
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo '<div class="owl-carousel owl-theme">';
+    for($i = 0; $i < sizeof($data); $i++)
+    {
+        $item = $data[$i];
+        echo '
+        <div class="item">
+            <img style = "width : 260px; height : 250px;" src="./SRC-Img/'. $item['img'] .'.jpg" alt="">
+            <div  class="btnCarousel"> 
+                <form method = "POST" style = "width : 100%;">
+
+                    <button style = "width : 100%;" class="btn-ID-add" name = "id-item-add-bag" value = "'. $item['id'] .'">add to card</button> 
+
+                </form>
+                <form action = "InformationDetail.php" style = "width : 100%;" method = "POST">
+                    <button style = "width : 100%;" class="btn-ID-add" name = "id-Detail" value = "'. $item['id'] .'">Detail</button>
+
+                </form>
+            </div>
+        </div>
+        ';
+    }
+    echo '</div>';
+   
+}
 
 function LoadItemMain()
 {
@@ -100,7 +153,7 @@ function LoadItem($gender)
         for($i = 0; $i < 16; $i++)
         {
             echo '<div style = "margin-left : 20px;" class="item-Main">
-            <img class = "item-img" src="./SRC-Img/item'. $item['img'] .'.jpg" alt="">
+            <img class = "item-img" src="./SRC-Img/'. $item['img'] .'.jpg" alt="">
 
             <div style = "width : 50px; height : 50px; margin-left : 10px; float : left;" >
                 <form method = "POST">
@@ -297,7 +350,7 @@ function LoadItemCart()
 
         <div class="product">
             <div class="product-image">
-                <img src="./SRC-Img/item'.  $item['img'] .'.jpg">
+                <img src="./SRC-Img/'. $item['img'] .'.jpg">
             </div>
             <div class="product-details">
                 <div class="product-title">'.  $item['NameItem'] .'</div>
@@ -422,7 +475,7 @@ function AddToBag()
     {
         $id = $_POST['id-item-add-bag'];
 
-       
+       var_dump($id);
 
         $db1 = new PDO('mysql:host=localhost;dbname=doan_ltw1;charset=utf8', 'root', 'admin');
         $stmt1 = $db1->prepare("SELECT * FROM Item where id = ?");

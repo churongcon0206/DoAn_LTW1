@@ -72,9 +72,28 @@ function AddToCart()
 
     <div id = "background-first-main">
 
+
     </div>
 
-    <!-- // thêm carousel mới nhất -->
+
+   
+    </div>
+
+      
+      <h1 style="color:blue">Top 10 Sản Phẩm mới Nhất</h1>
+  <?php 
+
+    $classify = "MH";
+    carousel($classify);
+  ?>
+    
+</div>
+
+
+<div>
+
+ 
+
 
     <div class = "background-second-main">
 
@@ -97,16 +116,16 @@ function AddToCart()
     </div>
     
 
-    <!-- // thêm carousel mới Bán Chạy -->
+  
+        
 
-    
-        <?php 
+    <h1 style="color:blue">Top 10 Sản Phẩm Bán Chạy Nhất</h1>
+    <?php 
 
-            LoadItemMain();
+        $classify = "BC";
+        carousel($classify);
+    ?>
 
-            // Temp();
-
-        ?>
 
 
     <div class = "background-third-main">
@@ -116,9 +135,13 @@ function AddToCart()
     </div>
 
 
-    <!-- // thêm carousel mới Bán Chạy -->
 
+    <h1 style="color:blue">Top 10 Sản Yêu Thích Nhất</h1>
+    <?php 
 
+        $classify = "YT";
+        carousel($classify);
+    ?>
 
     <div class = "background-fourth-main">
 
@@ -134,6 +157,25 @@ function AddToCart()
 
     </div>
 
+
+    <!-- js carousel -->
+    <script>
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})</script>
 <?php include "Footer.php"; ?>
 </body>
 </html>
