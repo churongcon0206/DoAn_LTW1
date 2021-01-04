@@ -20,6 +20,38 @@ echo '
 <?php
 
 
+
+function GetUserByID($IDCustomer)
+{
+    $db = new PDO('mysql:host=localhost;dbname=doan_ltw1;charset=utf8', 'root', 'admin');
+    $stmt = $db->prepare("SELECT * FROM users where IDCustomer = ?");
+    $stmt->execute(array($IDCustomer));
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $item = $data[0];
+    return $item;
+}
+
+
+function CheckSession()
+{
+
+    session_start();
+    if($_SESSION)
+    {
+
+    }
+}
+
+
+function LogoutSession()
+{
+
+    session_start();
+    unset($_SESSION['email']);
+}
+
+
+
 function carousel($classify)
 {
 
@@ -39,14 +71,14 @@ function carousel($classify)
         echo '
         <div class="item">
             <img style = "width : 260px; height : 250px;" src="./SRC-Img/'. $item['img'] .'.jpg" alt="">
-            <div  class="btnCarousel"> 
+            <div  style = "margin-right : 40px;" class="btnCarousel"> 
                 <form method = "POST" style = "width : 100%;">
 
-                    <button style = "width : 100%;" class="btn-ID-add" name = "id-item-add-bag" value = "'. $item['id'] .'">add to card</button> 
+                    <button style = "width : 100%; margin-right : 5px;" class="btn-ID-add" name = "id-item-add-bag" value = "'. $item['id'] .'">add to card</button> 
 
                 </form>
                 <form action = "InformationDetail.php" style = "width : 100%;" method = "POST">
-                    <button style = "width : 100%;" class="btn-ID-add" name = "id-Detail" value = "'. $item['id'] .'">Detail</button>
+                    <button style = "width : 100%; margin-left : 5px;" class="btn-ID-add" name = "id-Detail" value = "'. $item['id'] .'">Detail</button>
 
                 </form>
             </div>

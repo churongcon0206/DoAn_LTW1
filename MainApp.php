@@ -100,7 +100,7 @@ function AddToCart()
         <div class = "background-second-main-left">
             <img style = "height : 500px;" src = "./SRC-Img/background21.jpg">
             <h3>GIÀY PHARRELL WILLIAMS HU NMD</h3>
-            <a src = "InformationDetail.php"><button style = "width :20%; margin-left : 10%; " class = "btn-ID-add" >Detail</button></a>
+            <a src = "InformationDetail.php"><button style = "width :200%; margin-left : 10%; " class = "btn-ID-add" >Detail</button></a>
         </div>
 
 
@@ -110,7 +110,7 @@ function AddToCart()
             <img style = "height : 500px;"src = "./SRC-Img/background22.jpg">
             <h3>FEEL THE BOOST</h3>
             <h4>Bold. Bright. Full of energy. The latest Ultraboost DNA in Color. Exclusively through adidas.</h4>
-            <a src = "InformationDetail.php"><button style = "width :25%; margin-left : 10%; margin-top : -100px; " class = "btn-ID-add" >Detail</button></a>
+            <a src = "InformationDetail.php"><button style = "width :200%; margin-left : 10%; margin-top : -30px; " class = "btn-ID-add" >Detail</button></a>
 
         </div>
     </div>

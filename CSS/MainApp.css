@@ -241,6 +241,7 @@ html {
     font-size: 20px;
     color: black;
     background-color: white;
+    border-color : black;
 }
 
 .btn-ID-WishList {

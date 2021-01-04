@@ -17,7 +17,7 @@ include "Function.php";
 
 <form style = "margin-top : 50px; margin-left : 40%;" class="example" action="Sports.php" method = "POST">
         <input  name="input-search-sports" style = "width : 250px; color : black;" type="text" placeholder="Search...">
-        <button name="btn-search-sports"  type="submit"style = "background-color : black; width : 50px;" ><i class="fa fa-search"></i></button>
+        <button name="btn-search-sports"  type="submit"style = "background-color : black; width : 50px; height : 45px;" ><i class="fa fa-search"></i></button>
     </form>
 
     <div class="container-right">

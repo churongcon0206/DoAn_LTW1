@@ -12,42 +12,10 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
-<<<<<<< HEAD
-<?php
-
-    require_once '../Function.php';
-
-    if(isset($_POST['username']))
-    {
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $RePassword = $_POST['re_pass'];
-        $Name = $_POST['Name'];
-        $address = $_POST['Address'];
-        $phone = $_POST['Phone'];
-        $birth = $_POST['Birth'];
-
-        var_dump($username,
-        $email ,
-        $password,
-        $RePassword,
-        $Name,
-        $address,
-        $phone, 
-        $birth );
-    }
-    else
-    {
-        
-    }
-
-?>
-=======
-
->>>>>>> af6df39eb2c085ef534ad4b94a4fdc84fe3ffd57
 <body>
 
     <div class="main">
@@ -60,7 +28,7 @@
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-<<<<<<< HEAD
+
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="name" placeholder="User Name" />
                             </div>
@@ -76,10 +44,6 @@
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" />
                             </div>
-
-
-
-
                             <div class="form-group">
                                 <!-- <label for="email"><i class="zmdi zmdi-email"></i></label> -->
                                 <input type="text" name="Name" id="Name" placeholder="Your Name" />
@@ -97,10 +61,6 @@
                                 <input type="date" name="Birth" id="Birth" placeholder="Year Of Birth" />
                             </div>
 
-
-
-
-=======
                                 <!-- <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label> -->
                                 <input type="text" name="Username" id="name" placeholder="User Name" />
                             </div>
@@ -137,17 +97,17 @@
                                 <!-- <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label> -->
                                 <input type="file" name="image" id="image" placeholder="Avatar" require />
                             </div>                      
->>>>>>> af6df39eb2c085ef534ad4b94a4fdc84fe3ffd57
+
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                             </div>
                             <div class="form-group form-button">
-<<<<<<< HEAD
+
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
-=======
+
                                 <input type="submit" name="register" id="register" class="form-submit" value="Register" />
->>>>>>> af6df39eb2c085ef534ad4b94a4fdc84fe3ffd57
+
                             </div>
                         </form>
                     </div>
@@ -166,13 +126,13 @@
     <script src="js/main.js"></script>
 </body>
 
-<<<<<<< HEAD
+
 </html>
-=======
+
 </html>
 
 
-<!-- <?php
+<?php
 
 
     if(isset($_POST['register']))
@@ -210,5 +170,4 @@
     }
     
 
-?> -->
->>>>>>> af6df39eb2c085ef534ad4b94a4fdc84fe3ffd57
+?> 

@@ -43,11 +43,11 @@
                                 <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
                             </div>
                             <div class="form-group form-button">
-<<<<<<< HEAD
+
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
-=======
+
                                 <input type="submit" name="login" id="login" class="form-submit" value="Log in" />
->>>>>>> af6df39eb2c085ef534ad4b94a4fdc84fe3ffd57
+
                             </div>
                         </form>
 
@@ -63,9 +63,9 @@
     <script src="js/main.js"></script>
 </body>
 
-<<<<<<< HEAD
+
 </html>
-=======
+
 </html>
 <?php 
 if(isset($_POST['login'])){
@@ -73,7 +73,7 @@ if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $select_customer = "select * from customers where email='$email' AND password='$password'";
+    $select_customer = "select * from Users where email='$email' AND password='$password'";
 
     $run_customer = mysqli_query($con,$select_customer);
 
@@ -81,7 +81,7 @@ if(isset($_POST['login'])){
 
     $check_customer = mysqli_num_rows($run_customer);
 
-    $select_cart = "select *from cart ip_add='$get_ip'";
+    $select_cart = "select * from cart ip_add='$get_ip'";
 
     $run_cart = mysqli_query($con,$select_cart);
 
@@ -103,4 +103,3 @@ if(isset($_POST['login'])){
 }
 
 ?>
->>>>>>> af6df39eb2c085ef534ad4b94a4fdc84fe3ffd57
